@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moodify - Emotion-Based Music</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- Pulse Visualizer Background -->
+    <div class="visualizer-background"></div>
+
+    <!-- 🌟 Floating top bar -->
+    <div class="top-bar">
+        <h1>Moodify</h1>
+        <div class="top-bar">
+            <h1 class="moodify-title">
+              Moodify
+              <span class="waveform">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+              </span>
+            </h1>
+          </div>
+          
+    </div>
+
+    <div class="container">
+        <p>Get music recommendations based on your current mood!</p>
+
+        <div class="content">
+            <div class="camera-section">
+                <div class="video-container">
+                    <video id="video" width="640" height="480" autoplay></video>
+                    <canvas id="canvas" width="640" height="480"></canvas>
+                </div>
+                <button id="capture-btn">Capture Mood</button>
+                <button id="toggle-camera-btn">Stop Camera</button>
+                <div id="emotion-result"></div>
+            </div>
+
+            <div class="playlist-section">
+                <h2>Your Mood Playlist</h2>
+                <div id="playlist-container">
+                    <p>Your recommended tracks will appear here</p>
+                </div>
+                <button id="generate-btn" disabled>Generate Playlist</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="moodify-avatar" class="floating-avatar pulse">
+        <div id="emoji">😊</div>
+        <div id="avatar-tip">I'm here to vibe with you!</div>
+      </div>
+
+    
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
